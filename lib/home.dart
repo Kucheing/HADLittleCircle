@@ -63,23 +63,8 @@ class HomeScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfileeScreen(
-                    userId: 'your_user_id_here',
-                    appBar: AppBar(
-                      title: const Text('User Profile'),
-                    ),
-                    actions: [],
-                    children: [
-                      const Divider(),
-                      // Padding(
-                      //   padding: const EdgeInsets.all(2),
-                      //   child: AspectRatio(
-                      //     aspectRatio: 1,
-                      //     // child: Image.asset('assets/mainlogo.jpg'),
-                      //   ),
-                      // ),
-                      // const SignOutButton(),
-                    ],
+                  builder: (context) => MyHomePage(
+                    title: 'User Profile',
                   ),
                 ),
               );
