@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.orange,
         scaffoldBackgroundColor:
             Colors.white, // Set the default background color
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         ),
         appBarTheme: AppBarTheme(
           backgroundColor:
-              Colors.green, // Set the AppBar background color to green
+              Colors.orange, // Set the AppBar background color to green
         ),
       ),
       home: AuthGate(),
