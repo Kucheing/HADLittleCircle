@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextField(
                 controller: addressController,
                 decoration: const InputDecoration(
-                  hintText: 'Enter your Address',
+                  hintText: 'Enter your Address (Optional)',
                   contentPadding: EdgeInsets.all(10),
                   border: OutlineInputBorder(),
                 ),
