@@ -15,22 +15,26 @@ class StoreData {
   }
 
   Future<String> saveData({
-    required String name,
-    required String bio,
+    required String username,
+    required String fullname,
+    required String dob,
+    required String address,
     required Uint8List file,
   }) async {
     String resp = "Some Error Occurred";
     try {
-      if (name.isNotEmpty && bio.isNotEmpty) {
+      if (username.isNotEmpty && fullname.isNotEmpty && dob.isNotEmpty) {
         String imageUrl = await uploadImageToStorage('profileImage', file);
         await _firestore.collection('userProfile').add({
-          'name': name,
-          'bio': bio,
+          'username': username,
+          'fullname': fullname,
+          'dob': dob,
+          'address': address,
           'imageLink': imageUrl,
         });
         resp = 'success';
       } else {
-        resp = 'Name or bio is empty';
+        resp = 'Username, fullame or dob is empty';
       }
     } catch (err) {
       print('Error: $err');

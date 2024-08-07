@@ -15,8 +15,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Uint8List? _image;
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController bioController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController fullnameController = TextEditingController();
+  final TextEditingController dobController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
 
   void selectImage() async {
     Uint8List img = await pickImage(ImageSource.gallery);
@@ -26,16 +28,22 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void saveProfile() async {
-    String name = nameController.text;
-    String bio = bioController.text;
+    String username = usernameController.text;
+    String fullname = fullnameController.text;
+    String dob = dobController.text;
+    String address = addressController.text;
 
     if (_image == null) {
       print('No image selected');
       return;
     }
 
-    String resp =
-        await StoreData().saveData(name: name, bio: bio, file: _image!);
+    String resp = await StoreData().saveData(
+        username: username,
+        fullname: fullname,
+        dob: dob,
+        address: address,
+        file: _image!);
     print('Save Profile Response: $resp');
   }
 
@@ -73,25 +81,46 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   )
                 ],
-              ),
+              ), //Username
               const SizedBox(height: 24),
               TextField(
-                controller: nameController,
+                controller: usernameController,
                 decoration: const InputDecoration(
-                  hintText: 'Enter Name',
+                  hintText: 'Enter Userame',
                   contentPadding: EdgeInsets.all(10),
                   border: OutlineInputBorder(),
                 ),
-              ),
+              ), //Username
+              //Fullname
               const SizedBox(height: 24),
               TextField(
-                controller: bioController,
+                controller: fullnameController,
                 decoration: const InputDecoration(
-                  hintText: 'Enter Bio',
+                  hintText: 'Enter Fullname',
                   contentPadding: EdgeInsets.all(10),
                   border: OutlineInputBorder(),
                 ),
-              ),
+              ), //Fullname
+              //dob
+              const SizedBox(height: 24),
+              TextField(
+                controller: dobController,
+                decoration: const InputDecoration(
+                  hintText: 'Enter Date of Birth',
+                  contentPadding: EdgeInsets.all(10),
+                  border: OutlineInputBorder(),
+                ),
+              ), //dob
+              //address
+              const SizedBox(height: 24),
+              TextField(
+                controller: addressController,
+                decoration: const InputDecoration(
+                  hintText: 'Enter your Address',
+                  contentPadding: EdgeInsets.all(10),
+                  border: OutlineInputBorder(),
+                ),
+              ), //address
               const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: saveProfile,
