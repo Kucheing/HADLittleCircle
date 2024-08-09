@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "491265368461",
+    "project_id": "hadlittlecircle",
+    "storage_bucket": "hadlittlecircle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491265368461:android:133c86e42c075b53095dc4",
+        "android_client_info": {
+          "package_name": "com.example.complete"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWA7uGA5A38rM0JVJ1vMRZ58fc0v02auM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
